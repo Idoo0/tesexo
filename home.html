@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, white, grey);
+      font-family: 'Preahvihear', sans-serif;
+    }
+
+    .fade-in-text {
+      font-family: Arial;
+      font-size: 60px;
+      animation: fadeIn 5s;
+      text-align: center;
+      text-shadow: 10px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Preahvihear&display=swap">
+</head>
+<body>
+  <div class="fade-in-text" id="changingText">
+    <p>halooooooooooooooooooo</p>
+  </div>
+
+  <script>
+    var textElement = document.getElementById('changingText');
+    var buttonContainer = document.getElementById('buttonContainer');
+    var blackButtonElement = document.getElementById('blackButton');
+
+    setTimeout(function() {
+      changeText("penasaran kng ini apa 😁");
+    }, 5000);
+    setTimeout(function() {
+      changeText("oke sebelum mulai");
+    }, 10000);
+    setTimeout(function() {
+      changeText("bilang makasih dulu 🤩");
+    }, 15000);
+    setTimeout(function() {
+      changeText("bilang ulang 🤩");
+    }, 20000);
+    setTimeout(function() {
+      changeText("okey mantap gas");
+    }, 23000);
+    setTimeout(function() {
+      redirectToApp();
+    }, 25000);
+
+    function changeText(newText) {
+      textElement.innerHTML = '<p>' + newText + '</p>';
+    }
+
+    function redirectToApp() {
+      // Mengarahkan ke halaman app.html setelah 2 detik
+      setTimeout(function() {
+        window.location.href = 'app.html';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
